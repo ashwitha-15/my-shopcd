@@ -19,7 +19,7 @@ export default function Home() {
 
   const orderNow = () => {
     const text = `Hi! Order kavali: ${cart.map(c=>c.name).join(', ')} Total Rs.${total}`;
-    window.open(`https://wa.me/919999999999?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/918374649257?text=${encodeURIComponent(text)}`, '_blank');
   }
 
   return (
