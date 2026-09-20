@@ -45,7 +45,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <header className="p-4 shadow flex justify-between items-center sticky top-0 bg-white z-10">
-        <h1 className="text-2xl font-black">🛍️ Style Hub</h1>
+    <div className="flex items-center gap-2">
+      <img src="/IMG-20260920-WA5665.jpg" alt="Style Hub" className="w-9 h-9 rounded-lg" />
+      <h1 className="text-2xl font-black">Style Hub</h1>
+    </div>
         <button onClick={orderOnWhatsApp} className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">
           Cart ({cart.length}) - WhatsApp
         </button>
