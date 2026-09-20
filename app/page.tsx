@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <div style={{padding:15, fontFamily:'sans-serif', maxWidth:1200, margin:'auto'}}>
-      <h1>🛍️ My Shop CD - All In One Store</h1>
+      <h1>🛍️ Style Hub- All In One Store</h1>
       <div style={{display:'flex', gap:10, marginBottom:20, overflowX:'auto'}}>
         {["All","Mens","Womens","Shoes","Gadgets"].map(c=>(
           <button key={c} onClick={()=>setCat(c)} style={{padding:'8px 15px', borderRadius:20, border:'1px solid #8B5CF6', background: cat===c ? '#8B5CF6' : 'white', color: cat===c ? 'white' : '#8B5CF6'}}>{c}</button>
