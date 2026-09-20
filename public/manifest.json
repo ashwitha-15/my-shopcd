@@ -1,15 +1,15 @@
 {
-  "name": "MY SHOP",
-  "short_name": "MY SHOP",
+  "name": "My Shop CD",
+  "short_name": "ShopCD",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#7c3aed",
-  "theme_color": "#7c3aed",
+  "background_color": "#ffffff",
+  "theme_color": "#8B5CF6",
   "icons": [
     {
       "src": "/file.svg",
-      "sizes": "512x512",
-      "type": "image/png"
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
