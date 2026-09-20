@@ -1,76 +1,75 @@
-"use client";
-import { useState } from "react";
+"use client"
+import { useState } from "react"
 
-const allProducts = [
-  // MEN'S - 8 Products
-  { id: 1, name: "Black Cotton T-Shirt", price: 399, sellPrice: 599, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400", cat: "Mens" },
-  { id: 2, name: "White Oversized T-Shirt", price: 450, sellPrice: 699, image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400", cat: "Mens" },
-  { id: 3, name: "Blue Denim Shirt", price: 650, sellPrice: 999, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400", cat: "Mens" },
-  { id: 4, name: "Formal Shirt Slim Fit", price: 700, sellPrice: 1099, image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400", cat: "Mens" },
-  { id: 5, name: "Men Jeans Slim Fit", price: 800, sellPrice: 1299, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400", cat: "Mens" },
-  { id: 6, name: "Premium Hoodie Grey", price: 900, sellPrice: 1499, image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400", cat: "Mens" },
-  { id: 7, name: "Men's Jacket Black", price: 1200, sellPrice: 1999, image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400", cat: "Mens" },
-  { id: 8, name: "Men's Shorts Combo", price: 500, sellPrice: 799, image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400", cat: "Mens" },
-  
-  // WOMEN'S - 10 Products - HIGH PROFIT
-  { id: 9, name: "Red Kurti Cotton", price: 550, sellPrice: 899, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400", cat: "Womens" },
-  { id: 10, name: "Designer Saree Red", price: 900, sellPrice: 1499, image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400", cat: "Womens" },
-  { id: 11, name: "Floral Top for Girls", price: 400, sellPrice: 699, image: "https://images.unsplash.com/photo-1554568218-0f1715e72254?w=400", cat: "Womens" },
-  { id: 12, name: "Lehenga Choli Bridal", price: 1500, sellPrice: 2599, image: "https://images.unsplash.com/photo-1609356247989-6a3b2d9e6a0a?w=400", cat: "Womens" },
-  { id: 13, name: "Palazzo Pant Set", price: 600, sellPrice: 999, image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400", cat: "Womens" },
-  { id: 14, name: "Western Dress Black", price: 700, sellPrice: 1199, image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400", cat: "Womens" },
-  { id: 15, name: "Anarkali Kurti Green", price: 650, sellPrice: 1099, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400", cat: "Womens" },
-  { id: 16, name: "Jeans for Girls", price: 600, sellPrice: 999, image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400", cat: "Womens" },
+const phone = "918374649257"
 
-  // SHOES - 8 Products
-  { id: 17, name: "Running Shoes White", price: 1200, sellPrice: 1999, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400", cat: "Shoes" },
-  { id: 18, name: "Classic Sneakers Black", price: 1400, sellPrice: 2499, image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400", cat: "Shoes" },
-  { id: 19, name: "Sports Shoes Blue", price: 1100, sellPrice: 1799, image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400", cat: "Shoes" },
-  { id: 20, name: "Casual Shoes Brown", price: 900, sellPrice: 1499, image: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400", cat: "Shoes" },
-  
-  // GADGETS - 6 Products
-  { id: 21, name: "Wireless Earbuds", price: 600, sellPrice: 999, image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400", cat: "Gadgets" },
-  { id: 22, name: "Smart Watch Black", price: 1000, sellPrice: 1799, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", cat: "Gadgets" },
-  { id: 23, name: "Phone Cover Stylish", price: 150, sellPrice: 399, image: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=400", cat: "Gadgets" },
-  { id: 24, name: "Power Bank 20000mAh", price: 700, sellPrice: 1199, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400", cat: "Gadgets" },
-];
+const products = [
+  { id: 1, name: "Classic White Tee", price: 399, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500", category: "T-Shirts" },
+  { id: 2, name: "Black Oversized Tee", price: 449, image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500", category: "T-Shirts" },
+  { id: 3, name: "Blue Denim Shirt", price: 799, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500", category: "Shirts" },
+  { id: 4, name: "Black Hoodie Premium", price: 899, image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500", category: "Hoodies" },
+  { id: 5, name: "Cargo Pants - Black", price: 999, image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500", category: "Pants" },
+  { id: 6, name: "White Sneakers", price: 1199, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500", category: "Shoes" },
+  { id: 7, name: "Drop Shoulder Tee", price: 549, image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500", category: "T-Shirts" },
+  { id: 8, name: "Smart Watch Series", price: 1299, image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500", category: "Gadgets" },
+  { id: 9, name: "Grey Joggers", price: 699, image: "https://images.unsplash.com/photo-1552902875-9ac1fe6102?w=500", category: "Pants" },
+  { id: 10, name: "Printed Shirt", price: 849, image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500", category: "Shirts" },
+  { id: 11, name: "Beige Oversized Tee", price: 499, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500", category: "T-Shirts" },
+  { id: 12, name: "Black Cargo Joggers", price: 1099, image: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500", category: "Pants" },
+  { id: 13, name: "Polarized Sunglasses", price: 599, image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500", category: "Accessories" },
+  { id: 14, name: "Leather Wallet", price: 499, image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500", category: "Accessories" },
+  { id: 15, name: "Street Style Cap", price: 299, image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500", category: "Accessories" },
+  { id: 16, name: "Striped T-Shirt", price: 599, image: "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=500", category: "T-Shirts" },
+  { id: 17, name: "Denim Jacket", price: 1499, image: "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=500", category: "Jackets" },
+  { id: 18, name: "Navy Blue Hoodie", price: 949, image: "https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?w=500", category: "Hoodies" },
+  { id: 19, name: "Sports Shorts", price: 449, image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500", category: "Pants" },
+  { id: 20, name: "Black Backpack", price: 899, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500", category: "Bags" },
+]
 
 export default function Home() {
-  const [cat, setCat] = useState("All");
-  const [cart, setCart] = useState<any>([]);
-  const filtered = cat === "All" ? allProducts : allProducts.filter(p=>p.cat===cat);
-  const total = cart.reduce((s:any,i:any)=>s+i.sellPrice,0);
-  const profit = cart.reduce((s:any,i:any)=>s+(i.sellPrice - i.price),0);
+  const [cart, setCart] = useState<any[]>([])
 
-  const orderWA = () => {
-    const phone = "918374649257"; // NEE NUMBER
-    const items = cart.map((c:any)=>`${c.name} - ₹${c.sellPrice}`).join("%0A");
-    const msg = `🛍️ *NEW ORDER - My Shop CD* %0A%0A${items}%0A%0A💰 Total: ₹${total} %0A📍 Address: `;
-    window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
-  };
+  const addToCart = (p:any) => {
+    setCart([...cart, p])
+    alert(`${p.name} Added to Cart! 🛒`)
+  }
+
+  const orderOnWhatsApp = () => {
+    if(cart.length===0) return alert("Cart empty boss!")
+    let msg = `Hi Style Hub! I want to order:%0A`
+    cart.forEach(p => msg += `- ${p.name} - Rs.${p.price}%0A`)
+    msg += `%0AMy Address: `
+    window.open(`https://wa.me/${phone}?text=${msg}`, "_blank")
+  }
 
   return (
-    <div style={{padding:15, fontFamily:'sans-serif', maxWidth:1200, margin:'auto'}}>
-      <h1>🛍️ Style Hub- All In One Store</h1>
-      <div style={{display:'flex', gap:10, marginBottom:20, overflowX:'auto'}}>
-        {["All","Mens","Womens","Shoes","Gadgets"].map(c=>(
-          <button key={c} onClick={()=>setCat(c)} style={{padding:'8px 15px', borderRadius:20, border:'1px solid #8B5CF6', background: cat===c ? '#8B5CF6' : 'white', color: cat===c ? 'white' : '#8B5CF6'}}>{c}</button>
-        ))}
+    <div className="min-h-screen bg-white">
+      <header className="p-4 shadow flex justify-between items-center sticky top-0 bg-white z-10">
+        <h1 className="text-2xl font-black">🛍️ Style Hub</h1>
+        <button onClick={orderOnWhatsApp} className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">
+          Cart ({cart.length}) - WhatsApp
+        </button>
+      </header>
+
+      <div className="p-2 bg-black text-white text-center text-sm">
+        🔥 Free Delivery in Hyderabad | COD Available | Trending Collection 2026
       </div>
-      <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(160px, 1fr))', gap:15}}>
-        {filtered.map(p=>(
-          <div key={p.id} style={{border:'1px solid #eee', borderRadius:10, padding:10}}>
-            <img src={p.image} style={{width:'100%', height:150, objectFit:'cover', borderRadius:8}} />
-            <p style={{fontSize:13, margin:'8px 0 0 0'}}>{p.name}</p>
-            <b>₹{p.sellPrice}</b> <small style={{textDecoration:'line-through', color:'grey'}}>₹{p.price}</small>
-            <button onClick={()=>setCart([...cart, p])} style={{width:'100%', marginTop:8, background:'#8B5CF6', color:'white', border:'none', padding:8, borderRadius:6}}>Add</button>
+
+      <main className="p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {products.map(p => (
+          <div key={p.id} className="border rounded-xl overflow-hidden shadow hover:shadow-lg">
+            <img src={p.image} className="h-48 w-full object-cover" />
+            <div className="p-3">
+              <p className="text-xs text-gray-500">{p.category}</p>
+              <h3 className="font-bold text-sm">{p.name}</h3>
+              <p className="font-black mt-1">₹{p.price}</p>
+              <button onClick={()=>addToCart(p)} className="mt-2 w-full bg-black text-white py-2 rounded-lg text-sm">
+                Add to Cart
+              </button>
+            </div>
           </div>
         ))}
-      </div>
-      {cart.length>0 && <div style={{position:'fixed', bottom:0, left:0, right:0, background:'white', borderTop:'2px solid #8B5CF6', padding:15, display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-        <div><b>Cart: {cart.length} | ₹{total}</b><br/><small style={{color:'green'}}>Profit: ₹{profit}</small></div>
-        <button onClick={orderWA} style={{background:'green', color:'white', padding:'10px 20px', border:'none', borderRadius:8}}>Order on WhatsApp</button>
-      </div>}
+      </main>
     </div>
   )
-}
+   }
