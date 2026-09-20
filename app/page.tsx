@@ -43,7 +43,7 @@ export default function Home() {
   const profit = cart.reduce((s:any,i:any)=>s+(i.sellPrice - i.price),0);
 
   const orderWA = () => {
-    const phone = "91XXXXXXXXXX"; // NEE NUMBER
+    const phone = "918374649257"; // NEE NUMBER
     const items = cart.map((c:any)=>`${c.name} - ₹${c.sellPrice}`).join("%0A");
     const msg = `🛍️ *NEW ORDER - My Shop CD* %0A%0A${items}%0A%0A💰 Total: ₹${total} %0A📍 Address: `;
     window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
